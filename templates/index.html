@@ -13,164 +13,252 @@
 </head>
 
 <body>
-    <!-- 1. Intro -->
+
+    <!-- 스크롤 진행 표시 -->
+    <div id="progress-bar"></div>
+
+    <!-- 상단 메뉴 (Intro 이후 나타남) -->
+    <nav id="site-nav" aria-label="섹션 메뉴">
+        <button class="nav-home" data-target="intro">미리</button>
+        <ul>
+            {% for item in nav_items %}
+            <li><button class="nav-link" data-target="{{ item.id }}">{{ item.label }}</button></li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <!-- ================= 1. Intro ================= -->
     <section id="intro">
-        <div class="profile-circle"></div>
-        <h1>미리의 성장기</h1>
-        <p class="intro-text">
-            안녕하세요! 저는 미리예요.<br>
-            지금의 제가 되기까지<br>
-            몇 mm의 이야기가 쌓였을까요?
-        </p>
-        <button id="start-button" class="btn">'미리'보기 시작</button>
-        <p class="scroll-hint">아래로 스크롤해 보세요!</p>
-    </section>
-
-    <!-- 2. About Me -->
-    <section id="about">
-        <h2>About Me</h2>
-
-        <div class="card-group">
-            <div class="card card-coral">
-                <h3>Motto</h3>
-                <p>후회하지 않도록 매 순간 최선을 다 하기</p>
+        <div class="intro-inner">
+            {% if intro.photo %}
+            <img class="intro-photo" src="{{ url_for('static', filename=intro.photo) }}" alt="{{ intro.photo_alt }}"
+                loading="eager">
+            {% else %}
+            <!-- [사진 추가 필요: 대표 프로필 사진] app.py의 intro.photo 에 경로 입력 -->
+            <div class="intro-photo photo-empty" role="img" aria-label="사진 준비 중">
+                <span>사진 준비 중</span>
             </div>
+            {% endif %}
 
-            <div class="card card-coral">
-                <h3>Perfectionist</h3>
-                <p>이왕 할 거면 제대로 하기</p>
-            </div>
-
-            <div class="card card-coral">
-                <h3>Challenge</h3>
-                <p>낮선 분야라도 일단 도전해보기</p>
-            </div>
-
-            <div class="card card-coral">
-                <h3>Action</h3>
-                <p>생각만 하기보다 직접 행동하기</p>
-            </div>
-
-            <div class="card card-coral">
-                <h3>Analysis</h3>
-                <p>주변을 유심히 관찰하며 특징, 변화 그리고 그 속에 담긴 의미 생각하기</p>
-            </div>
+            <h1>{{ intro.name }}</h1>
+            <p class="intro-text">
+                {% for line in intro.lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+            </p>
+            <button id="start-button" class="btn">'미리'보기 시작</button>
+            <p class="scroll-hint" aria-hidden="true">아래로 스크롤해 보세요</p>
         </div>
     </section>
 
-    <!-- 3. Life Timeline -->
-    <section id="timeline">
-        <h2>Life Timeline</h2>
-        <p class="timeline-guide">1mm가 1살인 100년의 인생을 담은 자</p>
+    <!-- ================= 본문 ================= -->
+    <main id="main-content">
 
-        <div class="ruler-area">
-            <div class="ruler"></div>
-        </div>
+        <!-- ---------- 2. About ---------- -->
+        <section id="about">
+            <h2>About Me</h2>
 
-        <div class="event-card" class="card event-card">
-            <h3 id="event-title">눈금을 클릭해보세요</h3>
-            <p id="event-description">동그라미가 있는 눈금에 이야기가 담겨 있어요!</p>
-        </div>
-    </section>
-
-    <!-- 4. University Life -->
-    <section id="university">
-        <h2>University Life</h2>
-        <p class="section-guide">교과목 수업 이 외에도 학교 생활을 많이 했어요!</p>
-
-        <div class="uni-grid">
-            {% for item in university %}
-            <div class="uni-card">
-                <span class="uni-category">{{ item.category }}</span>
-                <h3>{{ item.main }}</h3>
-                <p class="uni-description">{{ item.description }}</p>
-
-                <div class="skill-tags">
-                    {% for tag in item.tags %}
-                    <span class="skill-tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-
-    <!-- 5. Projects -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <p class="section-guide">대학생활 동안 진행한 프로젝트 구경하실래요?</p>
-
-        <div class="project-grid">
-            {% for project in projects %}
-            <div class="card project-card">
-                <span class="project-category">{{ project.category }}</span>
-                <h3>{{ project.title }}</h3>
-                <p class="project-summary">{{ project.summary }}</p>
-
-                <div class="skill-tags">
-                    {% for skill in project.skills %}
-                    <span class="skill-tag">{{ skill }}</span>
+            <div class="about-layout">
+                <div class="about-photos">
+                    {% for photo in about.photos %}
+                    {% if photo.src %}
+                    <img src="{{ url_for('static', filename=photo.src) }}" alt="{{ photo.alt }}" loading="lazy">
+                    {% else %}
+                    <!-- [사진 추가 필요: 본인 사진 / 활동 사진] app.py의 about.photos 에 경로 입력 -->
+                    <div class="photo-empty" role="img" aria-label="사진 준비 중"><span>사진 준비 중</span></div>
+                    {% endif %}
                     {% endfor %}
                 </div>
 
-                <p class="project-role">역할 · {{ project.role }}</p>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-
-    <!-- 6. Interests -->
-    <section id="interests">
-        <h2>Interests</h2>
-        <p class="section-guide">최근 저의 관심사를 알려드릴게요</p>
-
-        <div class="interest-groups">
-            {% for group in interests %}
-            <div class="interest-group">
-                <h3>{{ group.group }}</h3>
-                <div class="interest-tags">
-                    {% for item in group.list %}
-                    <span class="interest-tag">{{ item }}</span>
+                <div class="about-text">
+                    {% for para in about.paragraphs %}
+                    <p>{{ para }}</p>
                     {% endfor %}
                 </div>
             </div>
-            {% endfor %}
-        </div>
-    </section>
 
-    <!-- 7. Future -->
-    <section id="future">
-        <h2>Future</h2>
-        <p class="section-guide">아직 채워지지 않은 눈금들입니다</p>
+            <p class="about-motto"><span>Motto</span>{{ about.motto }}</p>
+        </section>
 
-        <div class="future-list">
-            {% for item in future %}
-            <div class="future-item">
-                <span class="future-label">{{ item.label }}</span>
-                <p class="future-text">{{ item.text }}</p>
+        <!-- ---------- 3. Life Timeline ---------- -->
+        <section id="timeline">
+            <h2>Life Timeline</h2>
+            <p class="section-guide">1mm가 1살인 100년의 자 위에 지금까지의 이야기를 올려두었어요. 눈금을 눌러보세요.</p>
+
+            <!-- PC: 가로 자 -->
+            <div class="ruler-area">
+                <div class="ruler"></div>
             </div>
-            {% endfor %}
-        </div>
-    </section>
 
-    <!-- 8. Contact -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p class="section-guide">이야기를 나누고 싶다면 편하게 연락 주세요</p>
+            <!-- 모바일: 세로 타임라인 (JS가 채움) -->
+            <ol class="timeline-vertical" aria-label="인생 타임라인"></ol>
+        </section>
 
-        <div class="contact-list">
-            {% for contact in contacts %}
-            <a class="contact-item" href="{{ contact.link }}" target="_blank" rel="noopener">
-                <span class="contact-label">{{ contact.label }}</span>
-                <span class="contact-value">{{ contact.value }}</span>
-            </a>
-            {% endfor %}
-        </div>
+        <!-- ---------- 4. University Life ---------- -->
+        <section id="university">
+            <h2>University Life</h2>
+            <p class="section-guide">수업 밖에서 보낸 시간들이에요. 타일을 누르면 자세히 볼 수 있어요.</p>
 
-        <div class="contact-bottom">
-            <button id="top-button" class="btn">처음으로 돌아가기</button>
+            <div class="tile-grid">
+                {% for item in university %}
+                <button class="tile" data-kind="uni" data-id="{{ item.id }}"
+                    aria-label="{{ item.title }} 자세히 보기">
+                    {% if item.cover %}
+                    <img src="{{ url_for('static', filename=item.cover) }}" alt="{{ item.cover_alt }}" loading="lazy">
+                    {% else %}
+                    <!-- [사진 추가 필요: {{ item.title }} 대표 사진] -->
+                    <div class="photo-empty" aria-hidden="true"><span>사진 준비 중</span></div>
+                    {% endif %}
+                    <span class="tile-caption">
+                        <span class="tile-kind">{{ item.category }}</span>
+                        <span class="tile-title">{{ item.title }}</span>
+                    </span>
+                </button>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- ---------- 5. Projects ---------- -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <p class="section-guide">직접 만들어 본 것들이에요. 카드를 누르면 자세히 볼 수 있어요.</p>
+
+            <div class="project-grid">
+                {% for project in projects %}
+                <button class="project-card" data-kind="project" data-id="{{ project.id }}"
+                    aria-label="{{ project.title }} 자세히 보기">
+                    <span class="project-thumb">
+                        {% if project.cover %}
+                        <img src="{{ url_for('static', filename=project.cover) }}" alt="{{ project.cover_alt }}"
+                            loading="lazy">
+                        {% else %}
+                        <!-- [사진 추가 필요: {{ project.title }} 대표 이미지] -->
+                        <span class="photo-empty" aria-hidden="true"><span>사진 준비 중</span></span>
+                        {% endif %}
+                    </span>
+
+                    <span class="project-body">
+                        <span class="project-head">
+                            <span class="project-title">{{ project.title }}</span>
+                            {% if project.status == "ongoing" %}
+                            <span class="badge badge-ongoing">진행 중</span>
+                            {% endif %}
+                            {% if project.award %}
+                            <span class="badge badge-award">{{ project.award }}</span>
+                            {% endif %}
+                        </span>
+                        <span class="project-sub">{{ project.subtitle }}</span>
+                        <span class="project-summary">{{ project.summary }}</span>
+                        <span class="tag-row">
+                            {% for skill in project.skills %}
+                            <span class="tag">{{ skill }}</span>
+                            {% endfor %}
+                        </span>
+                        <span class="project-role">{{ project.role }}</span>
+                    </span>
+                </button>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- ---------- 6. Skills ---------- -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <p class="section-guide">해본 만큼만 적었어요.</p>
+
+            <div class="skill-columns">
+                {% for group in skills %}
+                <div class="skill-group">
+                    <h3>{{ group.group }}</h3>
+                    <ul>
+                        {% for item in group.list %}
+                        <li>
+                            <strong>{{ item.name }}</strong>
+                            <span>{{ item.desc }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- ---------- 7. Interests ---------- -->
+        <section id="interests">
+            <h2>Interests</h2>
+            <p class="section-guide">개발 밖에서의 시간들이에요.</p>
+
+            <div class="collage">
+                {% for photo in interests %}
+                <figure class="collage-item {{ photo.size }}">
+                    {% if photo.src %}
+                    <button class="collage-open" data-kind="photo" data-index="{{ loop.index0 }}"
+                        aria-label="{{ photo.alt }} 크게 보기">
+                        <img src="{{ url_for('static', filename=photo.src) }}" alt="{{ photo.alt }}" loading="lazy">
+                    </button>
+                    {% else %}
+                    <!-- [사진 추가 필요: {{ photo.alt }}] app.py의 interests 에 경로 입력 -->
+                    <div class="photo-empty" role="img" aria-label="사진 준비 중"><span>사진 준비 중</span></div>
+                    {% endif %}
+                    <figcaption>{{ photo.caption }}</figcaption>
+                </figure>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- ---------- 8. Future ---------- -->
+        <section id="future">
+            <h2>Future</h2>
+            <p class="section-guide">아직 비어 있는 눈금에 넣고 싶은 것들이에요.</p>
+
+            <ol class="future-list">
+                {% for item in future %}
+                <li class="future-item">
+                    <span class="future-label">{{ item.label }}</span>
+                    <p class="future-text">{{ item.text }}</p>
+                </li>
+                {% endfor %}
+            </ol>
+        </section>
+
+        <!-- ---------- 9. Contact ---------- -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p class="section-guide">편하게 연락 주세요.</p>
+
+            <div class="contact-list">
+                {% for contact in contacts %}
+                <a class="contact-item" href="{{ contact.link }}" target="_blank" rel="noopener">
+                    <span class="contact-label">{{ contact.label }}</span>
+                    <span class="contact-value">{{ contact.value }}</span>
+                </a>
+                {% endfor %}
+            </div>
+
+            <div class="contact-bottom">
+                <button id="top-button" class="btn btn-quiet">처음으로 돌아가기</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= 공용 팝업 ================= -->
+    <div id="modal-overlay" class="modal-overlay" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button id="modal-close" class="modal-close" aria-label="팝업 닫기">&times;</button>
+            <div id="modal-body" class="modal-body"></div>
         </div>
-    </section>
+    </div>
+
+    <!-- 데이터 전달 -->
+    <script id="site-data" type="application/json">
+        {{ {
+            "lifeEvents": life_events,
+            "currentAge": current_age,
+            "university": university,
+            "projects": projects,
+            "interests": interests,
+            "staticBase": url_for('static', filename='')
+        } | tojson }}
+    </script>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
