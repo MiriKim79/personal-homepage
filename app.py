@@ -238,7 +238,7 @@ projects = [
             "award": "우수 발표 논문상",
             "todo": "",
             "link": "",
-            "photos": [{"src" : "images/projects/p1_1.jpg", "alt" : "", "caption" : ""}]
+            "photos": [{"src" : "images/projects/p2_1.jpg", "alt" : "", "caption" : ""}]
         },
     {
         "id": "groovo",
