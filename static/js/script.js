@@ -162,9 +162,7 @@ function openUniModal(id) {
     let html = '<h3 id="modal-title">' + item.title + "</h3>";
     html += '<p class="modal-meta">' + item.category + " · " + item.period + "</p>";
     html += photoHtml(item.cover, item.cover_alt, "modal-cover");
-    html += '<div class="modal-section"><h4>무엇을 했나</h4><p>' + item.what + "</p></div>";
-    html += '<div class="modal-section"><h4>맡은 역할</h4><p>' + item.role + "</p></div>";
-    html += '<div class="modal-section"><h4>기억에 남는 점</h4><p>' + item.memory + "</p></div>";
+    html += '<div class="modal-section"><h4>Memory</h4><p>' + item.memory + "</p></div>";
     html += galleryHtml(item.photos);
     openModal(html);
 }
@@ -184,17 +182,17 @@ function openProjectModal(id) {
         html += '<div class="modal-note">수상 · ' + p.award + "</div>";
     }
 
-    html += '<div class="modal-section"><h4>어떤 프로젝트인가</h4><p>' + p.summary + "</p></div>";
+    html += '<div class="modal-section"><h4>PROJECT SUMMARY</h4><p>' + p.summary + "</p></div>";
 
-    html += '<div class="modal-section"><h4>한 일</h4><ul>';
+    html += '<div class="modal-section"><h4>DETAIL</h4><ul>';
     for (let i = 0; i < p.detail.length; i++) {
         html += "<li>" + p.detail[i] + "</li>";
     }
     html += "</ul></div>";
 
-    html += '<div class="modal-section"><h4>역할</h4><p>' + p.role + "</p></div>";
+    html += '<div class="modal-section"><h4>ROLE</h4><p>' + p.role + "</p></div>";
 
-    html += '<div class="modal-section"><h4>사용 기술</h4><div class="tag-row">';
+    html += '<div class="modal-section"><h4>TOOL</h4><div class="tag-row">';
     for (let i = 0; i < p.skills.length; i++) {
         html += '<span class="tag">' + p.skills[i] + "</span>";
     }
@@ -265,50 +263,73 @@ for (let i = 0; i < lifeEvents.length; i++) {
 
 const ruler = document.querySelector(".ruler");
 
+// 5-1. 자 본체 (눈금이 그려지는 판)
+const rulerBody = document.createElement("div");
+rulerBody.className = "ruler-body";
+ruler.appendChild(rulerBody);
+
+// 5-2. 지나온 구간 채우기 (본체 안쪽)
+const filled = document.createElement("div");
+filled.className = "ruler-filled";
+filled.style.width = currentAge * 26 + 24 + 3 + "px";
+rulerBody.appendChild(filled);
+
+// 5-3. 눈금 (1년 / 5년 / 10년)
 for (let age = 0; age <= 100; age++) {
-    const isEvent = eventAges.includes(age);
-    const tick = document.createElement(isEvent ? "button" : "div");
+    const tick = document.createElement("div");
     tick.className = "tick";
     tick.style.left = age * 26 + 24 + "px";
 
     if (age % 10 === 0) {
         tick.classList.add("tick-big");
         tick.innerHTML = "<span class='tick-label'>" + age + "</span>";
+    } else if (age % 5 === 0) {
+        tick.classList.add("tick-mid");
     }
 
     if (age > currentAge) {
         tick.classList.add("tick-future");
     }
 
-    if (isEvent) {
-        tick.classList.add("tick-event");
-        tick.dataset.age = age;
-        tick.setAttribute("aria-label", age + "세 이야기 보기");
-        tick.addEventListener("click", function (e) {
-            const clickedAge = Number(e.currentTarget.dataset.age);
-            const all = document.querySelectorAll(".tick-event");
-            for (let j = 0; j < all.length; j++) {
-                all[j].classList.remove("tick-active");
-            }
-            e.currentTarget.classList.add("tick-active");
-            openEventModal(clickedAge);
-        });
-    }
-
-    ruler.appendChild(tick);
+    rulerBody.appendChild(tick);
 }
 
-// 지나온 구간 채우기
-const filled = document.createElement("div");
-filled.className = "ruler-filled";
-filled.style.width = currentAge * 26 + 24 + 3 + "px";
-ruler.appendChild(filled);
+// 5-4. 사건 마커 (자 위쪽 · 원 + 세로선)
+for (let i = 0; i < lifeEvents.length; i++) {
+    const ev = lifeEvents[i];
+    const marker = document.createElement("button");
+    marker.className = "event-marker";
+    marker.style.left = ev.age * 26 + 24 + "px";
+    marker.dataset.age = ev.age;
+    marker.setAttribute("aria-label", ev.age + "세 " + ev.title + " 이야기 보기");
+    marker.innerHTML = "<span class='marker-label'>" + ev.title + "</span>";
 
-// 오른쪽 끝 안내 문구
+    marker.addEventListener("click", function (e) {
+        const clickedAge = Number(e.currentTarget.dataset.age);
+        const all = document.querySelectorAll(".event-marker");
+        for (let j = 0; j < all.length; j++) {
+            all[j].classList.remove("marker-active");
+        }
+        e.currentTarget.classList.add("marker-active");
+        openEventModal(clickedAge);
+    });
+
+    ruler.appendChild(marker);
+}
+
+// 5-5. 현재 나이 표시
+const nowMark = document.createElement("div");
+nowMark.className = "now-mark";
+nowMark.style.left = currentAge * 26 + 24 + "px";
+nowMark.innerHTML =
+    "<span class='now-label'><b>" + currentAge + "</b>NOW</span>";
+ruler.appendChild(nowMark);
+
+// 5-6. 오른쪽 끝 안내 문구
 const futureNote = document.createElement("div");
 futureNote.className = "future-note";
-futureNote.textContent = "아직 쓰지 않은 이야기가 남아 있어요";
-futureNote.style.left = 60 * 26 + 24 + "px";
+futureNote.textContent = "아직은 오지 않은 이야기가 많이 남아 있어요";
+futureNote.style.left = 58 * 26 + 24 + "px";
 ruler.appendChild(futureNote);
 
 // =========================================================

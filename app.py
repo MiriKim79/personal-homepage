@@ -20,7 +20,7 @@ intro = {
         "몇 mm의 이야기가 쌓였을까요?"
     ],
     # [사진 추가 필요: 대표 프로필 사진] static/images/intro/ 에 넣고 경로 입력
-    "photo": "",
+    "photo": "/images/intro/profile2.jpg",
     "photo_alt": "미리의 프로필 사진"
 }
 
@@ -29,18 +29,19 @@ intro = {
 # ---------------------------------------------------------
 about = {
     "paragraphs": [
-        "길을 걷다가 어제와 달라진 간판, 사람들이 줄 서는 방향 같은 걸 자주 봐요. "
-        "그냥 지나치기보다 왜 저럴까 한 번 더 생각하는 편입니다.",
-        "사람들의 행동이나 말투에서 지금 무엇이 불편한지 짐작해 보는 걸 좋아해요. "
-        "택시 동승 서비스도 여러 채팅방을 오가며 동승자를 찾는 게 번거롭다는 걸 보고 시작했습니다.",
-        "관찰한 것을 머리로만 두지 않고 일단 만들어 보려고 합니다. "
-        "낯선 기술이어도 필요하면 찾아보면서 시작하는 편이에요."
+        " 길을 걷다가 어제와 달라진 간판, 식물의 모양. 주변을 둘러보는 것을 좋아해요. "
+        "그냥 지나치기보다 왜 저럴까 한 번 더 생각하는 편이에요.",
+        " 사람들의 행동이나 말투에서 각자의 특징을 파악해 보는 걸 좋아해요. "
+        "사람들과 장난치며 이야기하는 것에서 즐거움을 얻어요.",
+        " 새로운 경험을 하는 것에 거부감이 없는 편이에요. "
+        "언젠가 어떻게든 도움이 된다고 생각해요. "
+        "그리고 이왕 시작한 일은 끝까지 최선을 다 하려고 노력해요."
     ],
     "motto": "후회하지 않도록, 할 수 있을 때 해보기",
     # [사진 추가 필요: 본인 사진 또는 활동 사진 2장]
     "photos": [
-        {"src": "", "alt": "일상 사진", "caption": ""},
-        {"src": "", "alt": "활동 사진", "caption": ""}
+        {"src": "/images/intro/cat.jpg", "alt": "일상 사진", "caption": "경기대 마스코트 야옹이들"},
+        {"src": "/images/intro/intro.jpg", "alt": "활동 사진", "caption": "부산에서"}
     ]
 }
 
@@ -53,43 +54,60 @@ life_events = [
         "year": "2006",
         "title": "세상 밖으로",
         "description": "나의 이야기가 시작된 순간.",
-        "photos": []  # [사진 추가 필요] {"src": "images/timeline/xxx.jpg", "alt": "", "caption": ""}
+        "photos": [{"src" : "images/timeline/age1_1.jpg", "alt": "", "caption": ""},
+                   {"src" : "images/timeline/age1_2.jpg", "alt": "", "caption": ""}
+                   ]  # [사진 추가 필요] {"src": "images/timeline/xxx.jpg", "alt": "", "caption": ""}
     },
     {
         "age": 6,
         "year": "2011",
         "title": "새로운 나이",
-        "description": "빠른 년생으로 한 학년 위 친구들과 함께 유치원 생활을 시작했습니다.",
-        "photos": []
+        "description": "빠른 년생으로 한 학년 위 친구들과 함께 유치원 생활을 시작했어요!",
+        "photos": [{"src" : "images/timeline/age6_1.jpg", "alt": "", "caption": ""},
+                   {"src" : "images/timeline/age6_2.jpg", "alt": "", "caption": ""}
+                   ]
     },
     {
         "age": 13,
         "year": "2018",
         "title": "졸업 여행",
-        "description": "친구들과 함께한 코타키나발루 여행. 오래 기억에 남는 시간이었습니다.",
-        "photos": []
+        "description": "친구들과 함께한 코타키나발루 졸업 여행. 잊지 못 할 추억이에요:)",
+        "photos": [{"src" : "images/timeline/age13_1.jpg", "alt": "", "caption": ""},
+                   {"src" : "images/timeline/age13_2.jpg", "alt": "", "caption": ""}
+                   ]
     },
     {
-        "age": 18,
+        "age": 17,
         "year": "2023",
         "title": "사람과 성장",
-        "description": "전교 부회장을 맡고, 열심히 하는 친구들 사이에서 공부했습니다. "
-                       "갈등과 화해를 겪으며 상황을 조금 더 객관적으로 보는 법을 배웠습니다.",
-        "photos": []
+        "description": "방송부와 전교 부회장 활동을 병행하는 동시에, 친구들을 따라다니며 공부도 열심히 했어요. 처음으로 친구와 갈등과 화해도 겪으며 성격이 T로 변하는 계기가 되기도 했지만..",
+        "photos": [{"src" : "images/timeline/age17_1.jpg", "alt": "", "caption": ""},
+                   {"src" : "images/timeline/age17_2.jpg", "alt": "", "caption": ""}
+                   ]
     },
+    {
+            "age": 19,
+            "year": "2024",
+            "title": "시작과 끝",
+            "description": "첫 대학의 입학과 자퇴, 그리고 반수. 그 결과 빠른 년생의 삶을 끝낼 수 있었어요.",
+            "photos": [{"src" : "images/timeline/age19_1.jpg", "alt": "", "caption": ""},
+                   {"src" : "images/timeline/age19_2.jpg", "alt": "", "caption": ""}]
+        },
     {
         "age": 20,
         "year": "2025",
-        "title": "시작과 끝",
-        "description": "첫 대학 입학과 자퇴, 그리고 반수. 다시 선택한 길에서 경기대학교에 들어왔습니다.",
-        "photos": []
+        "title": "원점",
+        "description": "경기대학교에 입학하여 '진짜' 친구들을 만날 수 있었어요 ㅋ",
+        "photos": [{"src" : "images/timeline/age20_1.jpg", "alt": "", "caption": ""},
+                   {"src" : "images/timeline/age20_2.jpg", "alt": "", "caption": ""}]
     },
     {
         "age": 21,
         "year": "2026",
         "title": "현재",
-        "description": "전공 공부와 함께 프로젝트, 해커톤, 대외활동에 도전하고 있습니다.",
-        "photos": []
+        "description": "전공 공부와 함께 다양한 프로젝트, 해커톤, 대외활동 등에 도전하고 있어요.",
+        "photos": [{"src" : "images/timeline/age21_1.webp", "alt": "", "caption": ""},
+                   {"src" : "images/timeline/age21_2.jpg", "alt": "", "caption": ""}]
     }
 ]
 
@@ -103,74 +121,73 @@ university = [
         "id": "council",
         "title": "학생회",
         "category": "Leadership",
-        "period": "[내용 추가 필요: 활동 기간]",
-        "cover": "",  # [사진 추가 필요: 학생회 대표 사진]
+        "period": "2026.02 ~ ",
+        "cover": "images/university/u1.jpg",  # [사진 추가 필요: 학생회 대표 사진]
         "cover_alt": "학생회 활동 사진",
-        "what": "[내용 추가 필요: 어떤 행사와 업무를 했는지]",
-        "role": "[내용 추가 필요: 맡은 역할]",
-        "memory": "[내용 추가 필요: 기억에 남는 점]",
-        "photos": []  # 3~5장 권장
+        "memory": "기획차장으로서 여러 행사를 주최하고, 다양한 사람을 만나볼 수 있어요",
+        "photos": [{"src" : "images/university/u1_1.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u1_2.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u1_3.jpg", "alt" : "", "caption" : ""}]  # 3~5장 권장
     },
     {
         "id": "swat",
         "title": "SWAT 봉사단",
         "category": "Community",
-        "period": "[내용 추가 필요: 활동 기간]",
-        "cover": "",
+        "period": "2025.09 ~ ",
+        "cover": "images/university/u2.jpg",
         "cover_alt": "봉사단 활동 사진",
-        "what": "[내용 추가 필요: 어떤 봉사를 했는지]",
-        "role": "[내용 추가 필요: 맡은 역할]",
-        "memory": "[내용 추가 필요: 기억에 남는 점]",
-        "photos": []
+        "memory": "창의적인 아이들과 교감하며 힐링이 돼요",
+        "photos": [{"src" : "images/university/u2_1.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u2_2.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u2_3.jpg", "alt" : "", "caption" : ""}]
     },
     {
         "id": "study",
         "title": "스터디 · 학업",
         "category": "Learning",
-        "period": "[내용 추가 필요: 활동 기간]",
-        "cover": "",
+        "period": "~ always ~",
+        "cover": "images/university/u3.jpg",
         "cover_alt": "스터디 사진",
-        "what": "거북이 스터디, 튜터링, CTL 프로그램에 참여했습니다. "
-                "[내용 추가 필요: 구체적으로 무엇을 공부했는지]",
-        "role": "[내용 추가 필요: 맡은 역할]",
-        "memory": "[내용 추가 필요: 기억에 남는 점]",
-        "photos": []
+        "memory": "4점대 성적을 유지하며 CSTS, SQLD, 토익 등 자격증 공부도 해요",
+        "photos": [{"src" : "images/university/u3_1.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u3_2.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u3_3.jpg", "alt" : "", "caption" : ""}]
     },
     {
         "id": "hackathon",
         "title": "해커톤 · 캠프",
         "category": "Challenge",
-        "period": "[내용 추가 필요: 참가 시기]",
-        "cover": "",
+        "period": "2026.06 ~ ",
+        "cover": "images/university/u4.webp",
         "cover_alt": "해커톤 참가 사진",
-        "what": "인하 넷제로 해커톤, 1박 2일 AI 창업 캠프 등에 참가했습니다.",
-        "role": "프론트엔드 화면 제작을 맡았습니다.",
-        "memory": "[내용 추가 필요: 기억에 남는 점]",
-        "photos": []
+        "memory": "인하 넷제로 해커톤, AI 창업 캠프, 크래프톤 등에 참가하며 AI를 활용한 개발 실력을 기르고 있어요.",
+        "photos": [{"src" : "images/university/u4_1.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u4_2.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u4_3.jpg", "alt" : "", "caption" : ""}]
     },
     {
-        "id": "research",
-        "title": "연구 활동",
-        "category": "Research",
-        "period": "[내용 추가 필요: 활동 기간]",
-        "cover": "",
-        "cover_alt": "연구 활동 사진",
-        "what": "[내용 추가 필요: 어떤 연구에 참여했는지]",
-        "role": "[내용 추가 필요: 맡은 역할]",
-        "memory": "[내용 추가 필요: 기억에 남는 점]",
-        "photos": []
+        "id": "experience",
+        "title": "대외 활동",
+        "category": "Experience",
+        "period": "~ always ~",
+        "cover": "images/university/u5.jpg",
+        "cover_alt": "활동 사진",
+        "memory": "거북이 스터디, 튜터링, CTL 공모전 그리고 SW 대학의 여러 프로그램 등에 참여했어요.",
+        "photos": [{"src" : "images/university/u5_1.png", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u5_2.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u5_3.jpg", "alt" : "", "caption" : ""}]
     },
     {
         "id": "club",
         "title": "동아리 · 일상",
         "category": "Daily",
-        "period": "[내용 추가 필요: 활동 기간]",
-        "cover": "",
+        "period": "2025.03 ~ ",
+        "cover": "images/university/u6.jpg",
         "cover_alt": "동아리 활동 사진",
-        "what": "산악회, 사진, 배드민턴 등 몸을 움직이는 활동에 참여했습니다.",
-        "role": "[내용 추가 필요: 맡은 역할]",
-        "memory": "[내용 추가 필요: 기억에 남는 점]",
-        "photos": []
+        "memory": "산악회, 사진, 배드민턴 등 평소 관심 있던 동아리 뿐만 아니라 과 동아리에도 참여했어요.",
+        "photos": [{"src" : "images/university/u6_1.webp", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u6_2.webp", "alt" : "", "caption" : ""},
+                   {"src" : "images/university/u6_3.jpg", "alt" : "", "caption" : ""}]
     }
 ]
 
@@ -180,136 +197,139 @@ university = [
 # ---------------------------------------------------------
 projects = [
     {
+            "id": "diet",
+            "title": "NUMATE",
+            "subtitle": "SW 상상기업",
+            "category": "AI & Data",
+            "status": "done",
+            "period": "2025.04 ~ 06",
+            "summary": "개인의 조건에 맞춰 식단을 추천해주는 맞춤형 식단 추천 어플리케이션",
+            "cover": "images/projects/p1.png",
+            "cover_alt": "식단 추천 서비스 화면",
+            "role": "기획 · AI",
+            "detail": [
+                "이용자의 BMI, 기초대사량과 같은 기본 정보와 선호/기피 식품, 식단 목적 등의 정보에 기반하여 개인 맞춤형 식사를 제공해주는 시스템이에요.",
+                "식약처, USDA 등의 CSV를 활용하여 시중에 판매하는 식품을 추천해주기도 해요.",
+                "해당 어플리케이션에 사용자의 로그가 쌓이면 그에 기반한 식단 로그를 생성할 수도 있어요."
+            ],
+            "skills": ["Python", "Pandas", "React"],
+            "award": "우수 사업계획서상",
+            "todo": "",
+            "link": "",
+            "photos": [{"src" : "images/projects/p1_1.jpg", "alt" : "", "caption" : ""}]
+        },
+    {
+            "id": "taxi",
+            "title": "TAXI-POT",
+            "subtitle": "웹 프로그래밍",
+            "category": "Web Development",
+            "status": "done",
+            "period": "2026.05",
+            "summary": "출발지와 목적지가 유사한 경기대 학생들을 위한 택시 동승 어플리케이션",
+            "cover": "images/projects/p2.png",
+            "cover_alt": "택시 동승 서비스 화면",
+            "role": "기획 · 디자인 · Full Stack",
+            "detail": [
+                "등하교 시간대에 매일같이 올라오는 커뮤니티의 택시팟 모집 글을 읽으며, 출발지와 도착지가 유사함에도 불구하고 택시 동승자를 찾는 과정이 번거롭다는 생각에서 시작했어요",
+                "경기대 학생들을 대상으로 출발지가 유사한 학생들끼리 경기대 혹은 유사한 목적지로 이동할 수 있도록 구현했어요.",
+                "자유로운 모집과 택시 관련 소통이 가능하도록 페이지를 구현했어요."
+            ],
+            "skills": ["HTML", "CSS", "JavaScript"],
+            "award": "우수 발표 논문상",
+            "todo": "",
+            "link": "",
+            "photos": [{"src" : "images/projects/p1_1.jpg", "alt" : "", "caption" : ""}]
+        },
+    {
         "id": "groovo",
         "title": "Groovo",
-        "subtitle": "댄스 학습 서비스",
+        "subtitle": "SW 상상기업",
         "category": "Web Development",
         "status": "ongoing",
-        "period": "[내용 추가 필요: 진행 기간]",
-        "summary": "춤을 배우고 싶은 사람을 위한 댄스 학습 서비스입니다.",
-        "cover": "",  # [사진 추가 필요: images/projects/groovo/]
+        "period": "2026.03 ~ ",
+        "summary": "해외 1020 대상 K-POP 댄스 학습 어플리케이션",
+        "cover": "images/projects/p3.png",  # [사진 추가 필요: images/projects/groovo/]
         "cover_alt": "Groovo 서비스 화면",
-        "role": "백엔드 담당",
+        "role": "Backend",
         "detail": [
-            "사용자 인증·인가 기능을 구현했습니다.",
-            "프론트엔드에서 만든 댄스 학습 화면과 연결할 API를 만들었습니다.",
-            "프론트엔드와 백엔드 사이의 요청·응답 데이터 구조를 이해하고 맞추는 작업을 했습니다."
+            "사용자 인증·인가 기능을 구현했어요.",
+            "프론트엔드에서 만든 댄스 학습 화면과 연결할 API를 만들었어요.",
+            "프론트엔드와 백엔드, AI 사이의 요청·응답 데이터 구조를 바탕으로 댄스 학습 화면을 구성하는 작업을 진행하고 있어요."
         ],
         "skills": ["Spring Boot", "Java", "REST API"],
-        "award": "",
-        "todo": "현재 진행 중인 프로젝트입니다. 남은 기능은 계속 구현하고 있습니다.",
+        "award": "우수 사업계획서상",
+        "todo": "현재 프로젝트가 진행 중이에요.",
         "link": "",  # [링크 확인 필요: GitHub 저장소]
-        "photos": []
+        "photos": [{"src" : "images/projects/p3_1.jpg", "alt" : "", "caption" : ""}]
     },
     {
         "id": "export-ai",
-        "title": "해외배송 서류 자동화",
-        "subtitle": "1박 2일 AI 창업 캠프",
+        "title": "무역이지",
+        "subtitle": "AI 창업 시뮬레이션 캠프",
         "category": "Hackathon",
         "status": "done",
-        "period": "1박 2일 AI 창업 캠프",
-        "summary": "해외로 물건을 보낼 때 통관번호를 찾고 서류를 작성하는 과정이 번거롭다는 점에서 시작한 프로젝트입니다.",
-        "cover": "",
+        "period": "2026.06",
+        "summary": "해외 배송 시 의류별 통관 번호 및 수출 관련 서류 자동 작성 및 제안 서비스",
+        "cover": "images/projects/p4.png",
         "cover_alt": "해외배송 서류 자동화 화면",
-        "role": "[내용 추가 필요: 캠프에서 담당한 역할]",
+        "role": "기획 · 디자인",
         "detail": [
-            "해외배송 과정에서 필요한 통관번호 확인과 서류 작성의 불편을 줄이는 것이 목표였습니다.",
-            "[내용 추가 필요: 실제로 만든 기능이나 화면]"
+            "소재마다 통관 번호가 다른 의류의 특징에 기반하여 해외 배송 시 통관번호 확인과 복잡한 서류 작성을 자동으로 할 수 있도록 구현했어요.",
+            "기존에 존재하던 화장품 수출 서류 자동 작성 서비스를 벤치마킹 했어요."
         ],
-        "skills": ["[내용 추가 필요: 실제 사용 기술]"],
+        "skills": ["ChatGPT", "Gemini", "Prompt Engineering"],
         "award": "우수상",
         "todo": "",
         "link": "",
-        "photos": []
-    },
-    {
-        "id": "taxi",
-        "title": "택시 동승 서비스",
-        "subtitle": "경기대 학생을 위한 동승자 매칭",
-        "category": "Web Development",
-        "status": "done",
-        "period": "[내용 추가 필요: 진행 기간]",
-        "summary": "여러 채팅방을 돌아다니며 택시 동승자를 찾는 게 번거롭다는 관찰에서 시작한 프로젝트입니다.",
-        "cover": "",
-        "cover_alt": "택시 동승 서비스 화면",
-        "role": "[내용 추가 필요: 팀/개인 여부와 담당 기능]",
-        "detail": [
-            "같은 방향으로 가는 학생끼리 흩어진 채팅방을 찾아다니는 상황을 자주 봤습니다.",
-            "한곳에서 목적지와 시간을 맞춰볼 수 있으면 좋겠다는 생각으로 시작했습니다.",
-            "[내용 추가 필요: 본인이 담당한 기능]",
-            "[내용 추가 필요: 어려웠던 점과 해결 방법]",
-            "[내용 추가 필요: 배운 점]"
-        ],
-        "skills": ["HTML", "CSS", "JavaScript"],
-        "award": "",
-        "todo": "",
-        "link": "",
-        "photos": []
+        "photos": [{"src" : "images/projects/p4_1.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/projects/p4_2.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/projects/p4_3.jpg", "alt" : "", "caption" : ""}]
     },
     {
         "id": "net-zero",
-        "title": "탄소 저감 발주 추천",
-        "subtitle": "인하 넷제로 해커톤",
+        "title": "ZeroWave",
+        "subtitle": "INHA NET-ZERO 공동 해커톤",
         "category": "Hackathon",
         "status": "done",
-        "period": "인하 넷제로 해커톤",
-        "summary": "탄소 배출을 줄이는 방향으로 발주량을 제안하는 아이디어로 참가했습니다.",
-        "cover": "",
+        "period": "2026.06",
+        "summary": "F&B 매장의 과잉 발주와 식품 폐기 문제를 줄이기 위한 AI 기반 발주 추천 서비스",
+        "cover": "images/projects/p5.png",
         "cover_alt": "넷제로 프로젝트 화면",
-        "role": "프론트엔드",
+        "role": "Frontend",
         "detail": [
-            "서비스 화면을 직접 만들었습니다.",
-            "[내용 추가 필요: 직접 제작한 화면이나 기능]",
-            "[내용 추가 필요: 발표 또는 결과]"
+            "중소형 F&B 매장에서 발생하는 유통 및 폐기 단계의 탄소 배출을 줄이기 위해 발주량을 제안하는 서비스를 기획하고 구현했어요.",
+            "판매 데이터, 날씨, 요일, 행사 정보 등을 활용한 수요예측 결과와 추천 발주량을 직관적으로 확인할 수 있는 대시보드를 구현했어요.",
+            "백엔드 API와 AI 챗봇을 연동하여 재고 현황, 발주 추천, 리포트, 자연어 질의 기능을 하나의 서비스에서 사용할 수 있도록 구현했어요."
         ],
-        "skills": ["HTML", "CSS", "JavaScript"],
-        "award": "",
+        "skills": ["Vite", "React Router", "Javascript", "CSS3"],
+        "award": "장려상",
         "todo": "",
         "link": "",
-        "photos": []
-    },
-    {
-        "id": "diet",
-        "title": "맞춤형 식단 추천",
-        "subtitle": "개인 상황에 맞는 식단 제안",
-        "category": "AI & Data",
-        "status": "done",
-        "period": "[내용 추가 필요: 진행 기간]",
-        "summary": "개인의 조건에 맞춰 식단을 추천하는 서비스입니다.",
-        "cover": "",
-        "cover_alt": "식단 추천 서비스 화면",
-        "role": "[내용 추가 필요: 담당한 역할]",
-        "detail": [
-            "[내용 추가 필요: 어떤 문제에서 시작했는지]",
-            "[내용 추가 필요: 본인이 담당한 기능]"
-        ],
-        "skills": ["[내용 추가 필요: 실제 사용 기술]"],
-        "award": "",
-        "todo": "",
-        "link": "",
-        "photos": []
+        "photos": [{"src" : "images/projects/p5_1.webp", "alt" : "", "caption" : ""},
+                   {"src" : "images/projects/p5_2.jpg", "alt" : "", "caption" : ""},
+                   {"src" : "images/projects/p5_3.jpg", "alt" : "", "caption" : ""}]
     },
     {
         "id": "krafton",
-        "title": "개인 홈페이지",
+        "title": "미리의 성장기",
         "subtitle": "크래프톤 정글 캠프 진행 중",
         "category": "Web Development",
         "status": "ongoing",
-        "period": "[내용 추가 필요: 진행 기간]",
-        "summary": "지금 보고 계신 이 홈페이지입니다. 크래프톤 캠프에서 진행 중인 작업물입니다.",
-        "cover": "",
+        "period": "2026.08",
+        "summary": "지금 보고 계신 이 홈페이지가 바로 크래프톤 캠프에서 진행 중인 개인 프로젝트 작업이에요.",
+        "cover": "images/projects/p6.png",
         "cover_alt": "개인 홈페이지 화면",
-        "role": "기획 · 디자인 · 개발 전부",
+        "role": "기획 · 디자인 · Full Stack",
         "detail": [
-            "지금까지 구현한 것: Flask 라우팅과 템플릿 연결, 자 모양 인생 타임라인, "
-            "프로젝트·활동 팝업, 사진 영역, 모바일 대응, AWS EC2 배포.",
-            "앞으로 할 것: 사진과 실제 내용 채우기, 세부 디자인 다듬기."
+            "별명이 밀리리터(mm)였던 점을 이용하여 일생 타임라인을 자 모양으로 정리해봤어요.",
+            "Flask 라우팅과 템플릿 연결, 모바일 대응, AWS EC2 배포 등의 기능을 바탕으로 진행했어요.",
+            "개인 프로젝트와 팀 프로젝트를 다양하게 경험할 수 있어요."
         ],
         "skills": ["Flask", "HTML", "CSS", "JavaScript", "AWS EC2"],
         "award": "",
-        "todo": "현재 진행 중입니다.",
+        "todo": "현재 프로젝트가 진행 중이에요.",
         "link": "",
-        "photos": []
+        "photos": [{"src" : "images/projects/p6_1.png", "alt" : "", "caption" : ""}]
     }
 ]
 
@@ -318,25 +338,38 @@ projects = [
 # ---------------------------------------------------------
 skills = [
     {
+        "group": "Languages",
+        "list": [
+            {"name": "Java"},
+            {"name": "Python"},
+            {"name": "JavaScript"},
+            {"name": "C"}
+        ]
+    },
+    {
         "group": "Backend",
         "list": [
-            {"name": "Spring Boot", "desc": "사용자 인증·인가 및 REST API 구현 경험"},
-            {"name": "Flask", "desc": "개인 홈페이지 라우팅과 템플릿 연결"}
+            {"name": "Spring Boot"},
+            {"name": "Flask"},
+            {"name": "REST API"}
         ]
     },
     {
         "group": "Frontend",
         "list": [
-            {"name": "HTML / CSS", "desc": "개인 홈페이지와 프로젝트 화면 제작"},
-            {"name": "JavaScript", "desc": "화면 상호작용과 API 연결"}
+            {"name": "HTML"},
+            {"name": "CSS"},
+            {"name": "React"}
         ]
     },
     {
         "group": "Tools",
         "list": [
-            {"name": "Git / GitHub", "desc": "버전 관리와 협업"},
-            {"name": "Figma", "desc": "화면 구조 및 사용자 흐름 정리"},
-            {"name": "AWS EC2", "desc": "Flask 애플리케이션 실행 및 외부 접속 설정"}
+            {"name": "Git"},
+            {"name": "GitHub"},
+            {"name": "Figma"},
+            {"name": "AWS EC2"},
+            {"name": "Docker"}
         ]
     }
 ]
@@ -346,12 +379,13 @@ skills = [
 #    size: "wide" | "tall" | "" (기본)
 # ---------------------------------------------------------
 interests = [
-    {"src": "", "alt": "여행 사진", "caption": "[캡션 추가 필요: 여행]", "size": "wide"},
-    {"src": "", "alt": "요리 사진", "caption": "[캡션 추가 필요: 요리]", "size": ""},
-    {"src": "", "alt": "콘서트 사진", "caption": "[캡션 추가 필요: 콘서트]", "size": "tall"},
-    {"src": "", "alt": "등산 사진", "caption": "[캡션 추가 필요: 자연·등산]", "size": ""},
-    {"src": "", "alt": "일상 사진", "caption": "[캡션 추가 필요: 일상]", "size": ""},
-    {"src": "", "alt": "일상 사진", "caption": "[캡션 추가 필요: 일상]", "size": "wide"}
+    {"src": "images/interests/i1.jpg", "alt": "여행 사진", "caption": "대학 동기들과 제주도 여행", "size": "wide"},
+    {"src": "images/interests/i2.jpg", "alt": "요리 사진", "caption": "미리표 오삼불고기", "size": ""},
+    {"src": "images/interests/i3.jpg", "alt": "콘서트 사진", "caption": "데이식스 콘서트", "size": "tall"},
+    {"src": "images/interests/i4.jpg", "alt": "자연 사진", "caption": "제주 바다", "size": ""},
+    {"src": "images/interests/i5.webp", "alt": "일상 사진", "caption": "흔한 시험 기간", "size": ""},
+    {"src": "images/interests/i6.jpg", "alt": "일상 사진", "caption": "눈사람 로망", "size": ""},
+    {"src": "images/interests/i7.jpg", "alt": "일상 사진", "caption": "맛집 탐방", "size": "wide"}
 ]
 
 # ---------------------------------------------------------
@@ -359,16 +393,16 @@ interests = [
 # ---------------------------------------------------------
 future = [
     {
-        "label": "관심 분야 찾기",
-        "text": "여러 분야를 직접 해보면서 어디에 오래 머물고 싶은지 찾아보려고 합니다."
-    },
-    {
-        "label": "배포까지 완성하기",
-        "text": "직접 기획한 서비스를 만들다 마는 게 아니라 배포해서 실제로 쓰이게 하고 싶습니다."
+        "label": "관심 분야 탐색",
+        "text": "여러 분야를 접해보면서 어디에 마음이 끌리는지 찾아보려고 해요."
     },
     {
         "label": "기록하는 습관",
-        "text": "프로젝트를 하면서 겪은 과정과 배운 점을 그때그때 남기는 습관을 만들려고 합니다."
+        "text": "프로젝트를 하면서 겪은 과정과 배운 점을 그때그때 남기는 습관을 만들려고 노력 중이에요."
+    },
+    {
+        "label": "해외 진출",
+        "text": "국내에서의 대외활동 뿐만 아니라 학교에서 지원해주는 해외 연수 활동을 해보고 싶어요."
     }
 ]
 
@@ -380,11 +414,6 @@ contacts = [
         "label": "Email",
         "value": "miri067979@kyonggi.ac.kr",
         "link": "mailto:miri067979@kyonggi.ac.kr"
-    },
-    {
-        "label": "GitHub",
-        "value": "github.com/MiriKim79",
-        "link": "https://github.com/MiriKim79"
     },
     {
         "label": "Instagram",
