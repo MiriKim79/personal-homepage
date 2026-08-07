@@ -328,7 +328,7 @@ projects = [
         "skills": ["Flask", "HTML", "CSS", "JavaScript", "AWS EC2"],
         "award": "",
         "todo": "현재 프로젝트가 진행 중이에요.",
-        "link": "",
+        "link": "http://3.37.127.9:5000/",
         "photos": [{"src" : "images/projects/p6_1.png", "alt" : "", "caption" : ""}]
     }
 ]
