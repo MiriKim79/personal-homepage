@@ -1,0 +1,37 @@
+개인 홈페이지
+http://3.37.127.9:5000/
+
+C:\Users\miri0\Documents\개인 정리용\경기대 서류\대내외활동\크래프톤\prac_python
+
+(ubuntu 실행, AWS EC2 접속 인스턴스 활용) (cd .. 하고 나서)
+ssh -i "jungleExample.pem" ubuntu@ec2-3-37-127-9.ap-northeast-2.compute.amazonaws.com
+
+(종료는 exit)
+
+3.37.127.9
+
+
+"C:\Users\miri0\Documents\개인 정리용\경기대 서류\대내외활동\크래프톤\personal-homepage"
+
+(디렉터리 이동)
+cd /C/Users/miri0/Documents/"개인 정리용"/"경기대 서류"/대내외활동/크래프톤/personal-homepage
+
+
+(깃헙에 올리기)
+git add .
+git commit -m "홈페이지 수정"
+git push origin main
+
+
+(AWS EC2 접속해서 최신 코드 받기)
+cd ~/personal-homepage
+git pull origin main
+
+(Flask 서버 재시작)
+sudo pkill -f "python.*app.py"
+
+(가상환경 활성화)
+source .venv/bin/activate
+
+(다시 실행)
+nohup python3 app.py > app.log 2>&1 &

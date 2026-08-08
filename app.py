@@ -312,25 +312,45 @@ projects = [
     {
         "id": "krafton",
         "title": "미리의 성장기",
-        "subtitle": "크래프톤 정글 캠프 진행 중",
+        "subtitle": "크래프톤 정글 웹 개발 집중 캠프 (개인 프로젝트)",
         "category": "Web Development",
         "status": "ongoing",
         "period": "2026.08",
-        "summary": "지금 보고 계신 이 홈페이지가 바로 크래프톤 캠프에서 진행 중인 개인 프로젝트 작업이에요.",
+        "summary": "나를 소개 하는 개인 홈페이지",
         "cover": "images/projects/p6.png",
         "cover_alt": "개인 홈페이지 화면",
         "role": "기획 · 디자인 · Full Stack",
         "detail": [
             "별명이 밀리미터(mm)였던 점을 이용하여 일생 타임라인을 자 모양으로 정리해봤어요",
-            "Flask 라우팅과 템플릿 연결, 모바일 대응, AWS EC2 배포 등의 기능을 바탕으로 진행했어요",
-            "개인 프로젝트와 팀 프로젝트를 다양하게 경험할 수 있어요."
+            "Flask 라우팅과 템플릿 연결, 모바일 대응, AWS EC2 배포 등의 기능을 바탕으로 진행했어요"
         ],
         "skills": ["Flask", "HTML", "CSS", "JavaScript", "AWS EC2"],
         "award": "",
-        "todo": "현재 프로젝트가 진행 중이에요.",
+        "todo": "",
         "link": "http://3.37.127.9:5000/",
         "photos": [{"src" : "images/projects/p6_1.png", "alt" : "", "caption" : ""}]
-    }
+    },
+    {
+            "id": "krafton",
+            "title": "개발 공부 가이드",
+            "subtitle": "크래프톤 정글 웹 개발 집중 캠프 (개인 정리)",
+            "category": "Web Development",
+            "status": "done",
+            "period": "2026.08",
+            "summary": "개발 초보자가 팀 프로젝트를 스스로 시작하고 협업할 수 있도록 정리한 개발 학습·실전 가이드",
+            "cover": "images/projects/p7.png",
+            "cover_alt": "개인 홈페이지 화면",
+            "role": "기획 · 디자인 · Full Stack",
+            "detail": [ "개발을 처음 시작하면서 프로젝트마다 반복적으로 찾아보던 개발 순서와 기본 개념, 협업 방법을 한곳에 정리하기 위해 제작했어요",
+                       "프론트엔드, 백엔드, 생성형 AI, Git·GitHub, 개발 협업 방식 등 팀 프로젝트에 필요한 내용을 역할과 상황에 따라 찾아볼 수 있도록 구성했어요",
+                       "개념을 공부하는 학습 가이드뿐만 아니라 GitHub 협업 규칙, AI 코딩 에이전트 규칙, 기획·API·일정 문서, Issue·PR 템플릿 등 실제 프로젝트에서 바로 활용할 수 있는 자료까지 함께 정리했어요"
+            ],
+            "skills": ["HTML", "CSS", "JavaScript", "Git", "GitHub"],
+            "award": "",
+            "todo": "현재 프로젝트가 진행 중이에요.",
+            "link": "https://mirikim79.github.io/dev-study-notes/",
+            "photos": [{"src" : "images/projects/p7_1.png", "alt" : "", "caption" : ""}]
+        }
 ]
 
 # ---------------------------------------------------------
