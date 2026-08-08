@@ -310,7 +310,7 @@ projects = [
                    {"src" : "images/projects/p5_3.jpg", "alt" : "", "caption" : ""}]
     },
     {
-        "id": "krafton",
+        "id": "krafton-p",
         "title": "미리의 성장기",
         "subtitle": "크래프톤 정글 웹 개발 집중 캠프 (개인 프로젝트)",
         "category": "Web Development",
@@ -331,7 +331,7 @@ projects = [
         "photos": [{"src" : "images/projects/p6_1.png", "alt" : "", "caption" : ""}]
     },
     {
-            "id": "krafton",
+            "id": "krafton-g",
             "title": "개발 공부 가이드",
             "subtitle": "크래프톤 정글 웹 개발 집중 캠프 (개인 정리)",
             "category": "Web Development",
